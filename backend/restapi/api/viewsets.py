@@ -25,3 +25,8 @@ class TeacherDetailsViewset(viewsets.ModelViewSet):
 class StudentAttendanceViewset(viewsets.ModelViewSet):
     queryset =  models.Student_Attendance.objects.all()
     serializer_class = serializers.StudentAttendanceSerializer
+
+
+class SubjectTotalViewset(viewsets.ModelViewSet):
+    queryset =  models.SubjectTotal.objects.all()
+    serializer_class = serializers.SubjectTotalSerializer
