@@ -27,12 +27,12 @@ class Teacher_Details(models.Model):
     unique_code = models.CharField(max_length=100,null=True,blank=True)
 
 class Student_Attendance(models.Model):
-    admission_no = models.ForeignKey(Student_Details,on_delete=models.CASCADE)
-    subject = models.ForeignKey(Teacher_Details,on_delete=models.CASCADE)
+    admission_no = models.ForeignKey(Student_Details,on_delete=models.CASCADE,null=True,blank=True)
+    subject = models.ForeignKey(Teacher_Details,on_delete=models.CASCADE,null=True,blank=True)
     time = models.TimeField(auto_now_add=True)
     date = models.DateField(auto_now_add=True)
 
 class SubjectTotal(models.Model):
-    subject = models.ForeignKey(Teacher_Details,on_delete=models.CASCADE)
+    subject = models.ForeignKey(Teacher_Details,on_delete=models.CASCADE,null=True,blank=True)
     time = models.TimeField(auto_now_add=True)
     date = models.DateField(auto_now_add=True)
